@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opti-Go — AI-Powered Transportation Optimization</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon">⬡</span>
+        Opti<span class="accent">Go</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#who-we-are">About</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#audience">Clients</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#advantages">Benefits</a></li>
+      </ul>
+      <a href="#features" class="nav-cta">Request Demo</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#who-we-are">About</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#audience">Clients</a>
+      <a href="#features">Features</a>
+      <a href="#advantages">Benefits</a>
+      <a href="#features" class="nav-cta">Request Demo</a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="grid-overlay"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge fade-up">
+        <span class="badge-dot"></span>
+        Powered by Artificial Intelligence
+      </div>
+      <h1 class="hero-title fade-up delay-1">
+        Transport Smarter.<br/>
+        Move <span class="gradient-text">Faster.</span><br/>
+        Waste <span class="gradient-text">Less.</span>
+      </h1>
+      <p class="hero-sub fade-up delay-2">
+        Opti-Go harnesses AI to eliminate inefficiencies across your entire transport network — cutting costs, reducing emissions, and delivering results in real time.
+      </p>
+      <div class="hero-actions fade-up delay-3">
+        <a href="#features" class="btn btn-primary">Get Started</a>
+        <a href="#how-it-works" class="btn btn-ghost">
+          <span class="play-icon">▶</span>
+          Learn More
+        </a>
+      </div>
+      <div class="hero-stats fade-up delay-4">
+        <div class="stat">
+          <span class="stat-num">40%</span>
+          <span class="stat-label">Cost Reduction</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">3×</span>
+          <span class="stat-label">Faster Routes</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">60%</span>
+          <span class="stat-label">Less Emissions</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual fade-up delay-2">
+      <div class="map-card">
+        <div class="map-header">
+          <span class="map-title">Live Route Optimizer</span>
+          <span class="map-status"><span class="pulse"></span>Active</span>
+        </div>
+        <div class="map-body">
+          <svg viewBox="0 0 320 220" class="route-svg" xmlns="http://www.w3.org/2000/svg">
+            <!-- Grid lines -->
+            <defs>
+              <pattern id="grid" width="32" height="22" patternUnits="userSpaceOnUse">
+                <path d="M 32 0 L 0 0 0 22" fill="none" stroke="rgba(99,102,241,0.12)" stroke-width="0.5"/>
+              </pattern>
+              <linearGradient id="routeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1" />
+              </linearGradient>
+              <linearGradient id="altGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#f97316;stop-opacity:0.5" />
+                <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0.5" />
+              </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <rect width="320" height="220" fill="url(#grid)"/>
+            <!-- Alt route (orange, dashed) -->
+            <path d="M 30 180 Q 80 120 130 140 Q 180 160 230 100 Q 270 60 290 40" 
+                  fill="none" stroke="url(#altGrad)" stroke-width="2" stroke-dasharray="5,4" opacity="0.7"/>
+            <!-- Optimal route (blue/cyan) -->
+            <path d="M 30 180 Q 90 150 150 100 Q 200 60 290 40" 
+                  fill="none" stroke="url(#routeGrad)" stroke-width="3" filter="url(#glow)" class="route-path"/>
+            <!-- Nodes -->
+            <circle cx="30" cy="180" r="7" fill="#6366f1" filter="url(#glow)"/>
+            <circle cx="30" cy="180" r="12" fill="none" stroke="#6366f1" stroke-width="1.5" opacity="0.4" class="ping"/>
+            <circle cx="150" cy="100" r="5" fill="#06b6d4"/>
+            <circle cx="220" cy="68" r="5" fill="#06b6d4"/>
+            <circle cx="290" cy="40" r="7" fill="#10b981" filter="url(#glow)"/>
+            <circle cx="290" cy="40" r="12" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.4" class="ping"/>
+            <!-- Labels -->
+            <text x="18" y="198" fill="#a5b4fc" font-size="9" font-family="DM Sans">HQ</text>
+            <text x="278" y="34" fill="#6ee7b7" font-size="9" font-family="DM Sans">Dest.</text>
+            <!-- Moving dot -->
+            <circle r="4" fill="#fff" filter="url(#glow)" class="moving-dot">
+              <animateMotion dur="3s" repeatCount="indefinite" path="M 30 180 Q 90 150 150 100 Q 200 60 290 40"/>
+            </circle>
+          </svg>
+        </div>
+        <div class="map-footer">
+          <div class="route-info">
+            <span class="route-label">Optimal Route</span>
+            <span class="route-val good">−28% distance</span>
+          </div>
+          <div class="route-info">
+            <span class="route-label">Est. Savings</span>
+            <span class="route-val good">$1,240 / week</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHO ARE WE ===== -->
+  <section class="section who-we-are" id="who-we-are">
+    <div class="container">
+      <div class="section-tag">Who Are We</div>
+      <div class="who-grid">
+        <div class="who-text">
+          <h2 class="section-title">We Reimagine How the World <span class="gradient-text">Moves</span></h2>
+          <p class="body-text">
+            Opti-Go is an AI-first transportation optimization platform built to solve the massive inefficiencies hiding in modern logistics networks. We use machine learning, real-time data analysis, and intelligent routing to help businesses move goods faster — with less fuel, less waste, and lower cost.
+          </p>
+          <p class="body-text">
+            From a single delivery van to a fleet of thousands, our platform adapts to your scale and brings enterprise-grade optimization to every operator.
+          </p>
+          <div class="who-pillars">
+            <div class="pillar">
+              <span class="pillar-icon">🤖</span>
+              <span>AI-Driven</span>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon">⚡</span>
+              <span>Real-Time</span>
+            </div>
+            <div class="pillar">
+              <span class="pillar-icon">🌍</span>
+              <span>Sustainable</span>
+            </div>
+          </div>
+        </div>
+        <div class="who-visual">
+          <div class="metric-cards">
+            <div class="metric-card mc-1">
+              <div class="mc-icon">🛣️</div>
+              <div class="mc-data">
+                <span class="mc-num">12.4M</span>
+                <span class="mc-label">Routes Optimized</span>
+              </div>
+            </div>
+            <div class="metric-card mc-2">
+              <div class="mc-icon">💰</div>
+              <div class="mc-data">
+                <span class="mc-num">$8.2M</span>
+                <span class="mc-label">Client Savings</span>
+              </div>
+            </div>
+            <div class="metric-card mc-3">
+              <div class="mc-icon">🌱</div>
+              <div class="mc-data">
+                <span class="mc-num">340T</span>
+                <span class="mc-label">CO₂ Saved</span>
+              </div>
+            </div>
+            <div class="metric-card mc-4">
+              <div class="mc-icon">📦</div>
+              <div class="mc-data">
+                <span class="mc-num">99.2%</span>
+                <span class="mc-label">On-Time Rate</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-tag">How It Works</div>
+      <h2 class="section-title centered">Three Steps to <span class="gradient-text">Peak Efficiency</span></h2>
+      <p class="section-sub centered">Our AI engine ingests your transport data and outputs actionable optimization in seconds.</p>
+
+      <div class="steps-wrapper">
+        <!-- Step line -->
+        <div class="steps-line"></div>
+
+        <!-- Step 1 -->
+        <div class="step-card reveal">
+          <div class="step-num">01</div>
+          <div class="step-icon-wrap s1">📥</div>
+          <h3 class="step-title">Input</h3>
+          <p class="step-desc">Feed the system your operational data — nothing more required.</p>
+          <ul class="step-list">
+            <li>Route configurations</li>
+            <li>Vehicle size & capacity</li>
+            <li>Fuel efficiency profiles</li>
+            <li>Custom constraints</li>
+          </ul>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card reveal">
+          <div class="step-num">02</div>
+          <div class="step-icon-wrap s2">🧠</div>
+          <h3 class="step-title">AI Processing</h3>
+          <p class="step-desc">Our engine runs thousands of simulations in milliseconds.</p>
+          <ul class="step-list">
+            <li>Pattern recognition</li>
+            <li>Predictive routing</li>
+            <li>Resource allocation</li>
+            <li>Constraint optimization</li>
+          </ul>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card reveal">
+          <div class="step-num">03</div>
+          <div class="step-icon-wrap s3">📊</div>
+          <h3 class="step-title">Output</h3>
+          <p class="step-desc">Receive clear, actionable results and live analytics.</p>
+          <ul class="step-list">
+            <li>Reduced operational waste</li>
+            <li>Cost efficiency reports</li>
+            <li>Improved delivery times</li>
+            <li>Weekly analytics dashboard</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TARGET AUDIENCE ===== -->
+  <section class="section audience" id="audience">
+    <div class="container">
+      <div class="section-tag">Target Clients</div>
+      <h2 class="section-title centered">Built for Businesses That <span class="gradient-text">Move the World</span></h2>
+      <div class="audience-grid">
+
+        <div class="audience-card reveal">
+          <div class="aud-icon">🏭</div>
+          <h3>Transport Companies</h3>
+          <p>Optimize entire fleet operations, reduce overhead, and scale delivery networks intelligently.</p>
+          <div class="aud-tag">Enterprise</div>
+        </div>
+
+        <div class="audience-card reveal">
+          <div class="aud-icon">📦</div>
+          <h3>Logistics & Warehousing</h3>
+          <p>Sync warehouse dispatch with real-time route optimization for faster last-mile delivery.</p>
+          <div class="aud-tag">Logistics</div>
+        </div>
+
+        <div class="audience-card reveal">
+          <div class="aud-icon">🛵</div>
+          <h3>Delivery Services</h3>
+          <p>Cut delivery times and driver costs while increasing order throughput across zones.</p>
+          <div class="aud-tag">Delivery</div>
+        </div>
+
+        <div class="audience-card reveal">
+          <div class="aud-icon">🏪</div>
+          <h3>Retail Giants</h3>
+          <p>Companies like Walmart and Tesco can streamline supply chains across hundreds of locations.</p>
+          <div class="aud-tag">Retail</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES / MVP ===== -->
+  <section class="section features" id="features">
+    <div class="container">
+      <div class="section-tag">MVP Features</div>
+      <h2 class="section-title centered">See Opti-Go in <span class="gradient-text">Action</span></h2>
+      <p class="section-sub centered">Our minimal viable product includes a full route optimization dashboard — built to scale.</p>
+
+      <div class="dashboard-mockup reveal">
+        <div class="dash-header">
+          <div class="dash-tabs">
+            <span class="dash-tab active">Dashboard</span>
+            <span class="dash-tab">Routes</span>
+            <span class="dash-tab">Fleet</span>
+            <span class="dash-tab">Reports</span>
+          </div>
+          <div class="dash-actions">
+            <span class="dash-badge">⬡ AI Active</span>
+          </div>
+        </div>
+        <div class="dash-body">
+          <div class="dash-sidebar">
+            <div class="dash-nav-item active">📊 Overview</div>
+            <div class="dash-nav-item">🗺️ Route Map</div>
+            <div class="dash-nav-item">🚛 Vehicles</div>
+            <div class="dash-nav-item">⚙️ Constraints</div>
+            <div class="dash-nav-item">📈 Analytics</div>
+          </div>
+          <div class="dash-main">
+            <div class="kpi-row">
+              <div class="kpi-card">
+                <span class="kpi-label">Active Routes</span>
+                <span class="kpi-val">24</span>
+                <span class="kpi-change pos">+3 today</span>
+              </div>
+              <div class="kpi-card">
+                <span class="kpi-label">Fleet Utilization</span>
+                <span class="kpi-val">87%</span>
+                <span class="kpi-change pos">↑ 12%</span>
+              </div>
+              <div class="kpi-card">
+                <span class="kpi-label">Avg. Delay</span>
+                <span class="kpi-val">4 min</span>
+                <span class="kpi-change pos">↓ 38%</span>
+              </div>
+              <div class="kpi-card">
+                <span class="kpi-label">Cost Saved</span>
+                <span class="kpi-val">$4,210</span>
+                <span class="kpi-change pos">This week</span>
+              </div>
+            </div>
+            <div class="dash-bottom">
+              <div class="route-table">
+                <div class="rt-header">
+                  <span>Route</span><span>Vehicle</span><span>Status</span><span>Efficiency</span>
+                </div>
+                <div class="rt-row">
+                  <span>R-001 → Depot A</span><span>Truck 12</span>
+                  <span class="status-badge active">On Route</span>
+                  <span class="eff-bar"><span style="width:88%"></span>88%</span>
+                </div>
+                <div class="rt-row">
+                  <span>R-002 → Zone B</span><span>Van 04</span>
+                  <span class="status-badge done">Delivered</span>
+                  <span class="eff-bar"><span style="width:95%"></span>95%</span>
+                </div>
+                <div class="rt-row">
+                  <span>R-003 → Hub C</span><span>Truck 07</span>
+                  <span class="status-badge warn">Rerouting</span>
+                  <span class="eff-bar"><span style="width:72%"></span>72%</span>
+                </div>
+                <div class="rt-row">
+                  <span>R-004 → South D</span><span>Van 11</span>
+                  <span class="status-badge active">On Route</span>
+                  <span class="eff-bar"><span style="width:91%"></span>91%</span>
+                </div>
+              </div>
+              <div class="mini-chart">
+                <div class="mc-title">Weekly Savings ($)</div>
+                <div class="bar-chart">
+                  <div class="bar-group"><div class="bar" style="height:55%"></div><span>Mon</span></div>
+                  <div class="bar-group"><div class="bar" style="height:70%"></div><span>Tue</span></div>
+                  <div class="bar-group"><div class="bar" style="height:48%"></div><span>Wed</span></div>
+                  <div class="bar-group"><div class="bar" style="height:85%"></div><span>Thu</span></div>
+                  <div class="bar-group"><div class="bar" style="height:92%"></div><span>Fri</span></div>
+                  <div class="bar-group"><div class="bar" style="height:65%"></div><span>Sat</span></div>
+                  <div class="bar-group"><div class="bar" style="height:78%"></div><span>Sun</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COST ===== -->
+  <section class="section cost-section" id="cost">
+    <div class="container">
+      <div class="cost-inner reveal">
+        <div class="cost-icon">💡</div>
+        <h2>Transparent Pricing — Coming with MVP</h2>
+        <p>We're currently in the MVP development phase. Pricing will be determined based on usage scale, fleet size, and integration requirements. Early adopters will receive priority access and exclusive rates.</p>
+        <a href="#features" class="btn btn-primary">Join Early Access</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ADVANTAGES ===== -->
+  <section class="section advantages" id="advantages">
+    <div class="container">
+      <div class="section-tag">Why Opti-Go</div>
+      <h2 class="section-title centered">Advantages That <span class="gradient-text">Compound Over Time</span></h2>
+
+      <div class="adv-grid">
+        <div class="adv-card reveal">
+          <div class="adv-icon">⏱️</div>
+          <h3>Faster Deliveries</h3>
+          <p>AI-optimized routes reduce delivery times by up to 35%, keeping customers satisfied and operations lean.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">🌿</div>
+          <h3>Lower Emissions</h3>
+          <p>Smarter routing means fewer unnecessary miles driven, directly reducing your carbon footprint and fuel costs.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">🗑️</div>
+          <h3>Reduce Wastage</h3>
+          <p>Eliminate empty runs, over-allocation, and inefficient loads that silently drain your profitability.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">⚡</div>
+          <h3>Time Efficiency</h3>
+          <p>What used to take hours of planning now takes seconds. Free your team to focus on what matters.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">👷</div>
+          <h3>Reduce Labour Effort</h3>
+          <p>Automate dispatch decisions, route planning, and reporting — shrinking manual overhead significantly.</p>
+        </div>
+        <div class="adv-card reveal">
+          <div class="adv-icon">📡</div>
+          <h3>Easy Data Access</h3>
+          <p>A unified dashboard gives instant visibility into your entire transport network — no complex queries needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CHALLENGES ===== -->
+  <section class="section challenges" id="challenges">
+    <div class="container">
+      <div class="section-tag">Honest Challenges</div>
+      <h2 class="section-title centered">We Know the <span class="gradient-text">Road Ahead</span></h2>
+      <p class="section-sub centered">We're transparent about the real obstacles — and how we're solving them.</p>
+
+      <div class="challenges-grid">
+        <div class="challenge-card reveal">
+          <div class="ch-num">01</div>
+          <div class="ch-content">
+            <h3>Reaching Business Clients</h3>
+            <p>Enterprise sales cycles are long. We're building direct partnerships and targeted B2B outreach to accelerate adoption.</p>
+          </div>
+        </div>
+        <div class="challenge-card reveal">
+          <div class="ch-num">02</div>
+          <div class="ch-content">
+            <h3>Initial AI Tool Costs</h3>
+            <p>High-quality AI infrastructure has upfront costs. Our MVP-first approach keeps investment lean while validating value.</p>
+          </div>
+        </div>
+        <div class="challenge-card reveal">
+          <div class="ch-num">03</div>
+          <div class="ch-content">
+            <h3>Data Collection at Scale</h3>
+            <p>Collecting high-quality route data is non-trivial. We're building partnerships and APIs with existing data providers.</p>
+          </div>
+        </div>
+        <div class="challenge-card reveal">
+          <div class="ch-num">04</div>
+          <div class="ch-content">
+            <h3>Integration Complexity</h3>
+            <p>Every company uses different systems. Our modular API design ensures smooth integration with any existing software stack.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner">
+    <div class="cta-orb-1"></div>
+    <div class="cta-orb-2"></div>
+    <div class="container">
+      <div class="cta-inner reveal">
+        <h2>Ready to Optimize Your Transport Network?</h2>
+        <p>Join early access and be among the first businesses to transform how you move.</p>
+        <div class="cta-actions">
+          <a href="#features" class="btn btn-primary btn-lg">Get Early Access</a>
+          <a href="#how-it-works" class="btn btn-outline-light btn-lg">See How It Works</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo footer-logo">
+            <span class="logo-icon">⬡</span>
+            Opti<span class="accent">Go</span>
+          </div>
+          <p>AI-powered transportation optimization for businesses that move the world.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="GitHub">⌥</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#advantages">Benefits</a></li>
+            <li><a href="#cost">Pricing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#who-we-are">About Us</a></li>
+            <li><a href="#audience">Clients</a></li>
+            <li><a href="#challenges">Challenges</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="#">hello@opti-go.ai</a></li>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">API Docs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 Opti-Go. All rights reserved.</span>
+        <span>Built with ♥ for smarter logistics</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
